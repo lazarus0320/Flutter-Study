@@ -1,4 +1,4 @@
-# 📕[Flutter Sutdy]
+# 📕[Flutter Study]
 Flutter(플러터): UI framework that allows Android and IOS mobile applications to be developed in one code.
 
 - Cross-platform development: If you write code with a Flutter, you can distribute it to Android and IOS devices at the same time.
