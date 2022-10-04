@@ -1,8 +1,4 @@
 # 📕[Flutter Sutdy]
-플러터(Flutter) : 안드로이드와 IOS 모바일 애플리케이션을 하나의 코드로 개발할 수 있는 UI 프레임워크.
-- 크로스 플랫폼 개발 : 플러터로 코드를 작성하면 안드로이드와 IOS 기기에 동시에 배포 가능.
-- 플러터는 다트(dart)언어 기반 구글에서 개발한 프레임워크.
-
 Flutter(플러터): UI framework that allows Android and IOS mobile applications to be developed in one code.
 
 - Cross-platform development: If you write code with a Flutter, you can distribute it to Android and IOS devices at the same time.
