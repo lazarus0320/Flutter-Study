@@ -87,7 +87,7 @@ int add(int a, int b){
 
 var multi = (_a, _b) {  // 익명 함수식
   return _a * _b;
-};
+}; // 세미콜론 주의
 
 int sub(int _a, int _b) => _a - _b;  // 람다 함수식
 
