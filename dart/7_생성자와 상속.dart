@@ -100,4 +100,26 @@ main() {
   var person = Person.initName("Min"); // 1. Person.initName 생성자로 전달
 }
 
+// 상수 생성자 : 해당 클래스가 변하지 않는 객체를 생성함. 대신 인스턴수 변수는 final을, 생성자는 const를 붙임
+  
+class Person{
+  final String name;
+  final num age;
+  
+  const Person(this.name, this.age);
+}
+
+main() {
+  Person person1 = const Person('Min', 20); 
+  Person person2 = const Person('Min', 20);
+  Person person3 = Person('Min', 20);
+  Person person4 = Person('Min', 20);
+  
+  print(identical(person1, person2)); // true
+  print(identical(person2, person3)); // false
+  print(identical(person3, person4)); // false
+}
+ // 상수 생성자는 동일한 인스턴스를 참조해서 서로 같고, person3,4는 새로운 인스턴스를 각각 생성했기에 다르다.
+  
+  
   
