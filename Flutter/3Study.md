@@ -27,4 +27,4 @@ API 30 Download > 완료 후 Next > Finish > Actions의 실행 버튼 클릭시 
 
 # 시작 프로젝트 뜯어보기
 다트 앱 실행시 main()함수가 시작된다.
-https://user-images.githubusercontent.com/84646738/203331304-f56c1006-3199-468a-ab50-279ca8095798.jpg
+<img src="https://user-images.githubusercontent.com/84646738/203331304-f56c1006-3199-468a-ab50-279ca8095798.jpg">
