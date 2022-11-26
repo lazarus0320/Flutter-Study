@@ -27,13 +27,12 @@ API 30 Download > 완료 후 Next > Finish > Actions의 실행 버튼 클릭시 
 
 # 시작 프로젝트 뜯어보기 + Widget 이란?
 
-<img src="https://user-images.githubusercontent.com/84646738/203331304-f56c1006-3199-468a-ab50-279ca8095798.jpg"><br>
+<img src="https://user-images.githubusercontent.com/84646738/204071743-c220afac-6e9f-47ba-bcdc-4779dedb9033.jpg"><br>
 ## 1. main() 함수
 다트 앱 실행시 main()함수가 시작된다.<br>
 runApp은 플러터 앱을 시작하는 역할을 한다.<br>
 이 함수에 플러터 앱을 시작하면서 화면에 표시할 위젯을 전달한다.<br>
 
-<img src="https://user-images.githubusercontent.com/84646738/203332125-30988400-2f64-439a-b10f-8982460b7d32.jpg"><br>
 ## 2. runApp() 함수
 첫 화면을 띄우는 작업을 수 행하는 함수.<br>
 매개변수로 Widget 객체를 넣어 우리가 구현한 화면을 보이도록 만들어준다.<br>
