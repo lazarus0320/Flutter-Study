@@ -128,4 +128,61 @@ class MyApp extends StatelessWidget {
 * onTap : 항목을 누를경우 수행되는 메서드
 * trailing : title 뒤에 할당할 위젯에 대한 속성. 보통 Icon 위젯이 따라옴.
   상단의 코드에서는 Icon(Icons.arrow_forward_ios)를 넣음으로써 > 모양 아이콘이 title 다음으로 할당되는 것을 확인할 수 있음.
-  
+
+# Container
+플러터 레이아웃의 기본 요소.
+```dart
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: First(),
+    );
+  }
+}
+
+class First extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("hello", style: TextStyle(color: Colors.red),),
+      ),
+      body: Container(
+        color: Colors.green,
+      ),
+    );
+  }
+}
+```
+![컨테이너1](https://user-images.githubusercontent.com/84646738/204076743-bfad16c1-4c63-47c8-a2e9-3327aa9b2715.jpg)<br>
+따로 사이즈나 child를 지정하지 않으면 AppBar를 제외한 body 전체 영역에 설정한 옵션이 지정된다.
+<br>
+```dart
+body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        color: Colors.green,
+        child: Text("안녕하세요"),
+        width: 300,
+        
+      ),
+```
+![컨테이너5](https://user-images.githubusercontent.com/84646738/204078035-69ee8ab6-b424-42d9-afe0-e4fd624c1932.jpg)<br>
+child로 지정한 옵션의 영역을 기본적으로 할당하게 되고,
+그외의 부가적인 설정으로 세부적인 영역을 설정할 수 있다.
+
+## padding, margin
+padding은 레이아웃과 위젯 사이 빈공간
+margin은 위젯과 위젯 사이 빈공간을 설정한다.
+* EdgeInsects.symmetric(horizontal: 10) : 양쪽 수평으로 적용
+* EdgeInsects.symmetric(vertical: 10) : 양쪽 수직으로 적용
+* EdgeInsects.all : 전체 방향에 적용
+* EdgeInsects.only(top: 10, bottom: 10, left: 10, right: 10) : 세부 설정 가능
+
+
