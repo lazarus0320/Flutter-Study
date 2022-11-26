@@ -221,4 +221,21 @@ mainAxisAlignment는 자식들을 위 아래 방향으로 배열시키는 옵션
 ![자식3](https://user-images.githubusercontent.com/84646738/204079171-d25387f4-78d2-4403-8b25-810dd101eaae.jpg)
 <br>
 crossAxisAlignment는 자식들을 수평 방향으로 배열시키는 옵션이다.
+```dart
+body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("자식1"),
+          Text("자식222"),
+          Text("자식33333"),
+        ],
+```
 
+* crossAxisAlignment: CrossAxisAlignment.start => 수평방향 기본값<br>
+![크로스11](https://user-images.githubusercontent.com/84646738/204079551-d9c79efa-eb42-442c-8ace-f8d65920212f.jpg)<br>
+
+* crossAxisAlignment: CrossAxisAlignment.center => 수평방향 정중앙<br>
+![크로스22](https://user-images.githubusercontent.com/84646738/204079654-76820293-4924-4a60-9e11-3a63879bd938.jpg)
+
+* crossAxisAlignment: CrossAxisAlignment.end => 수평방향 오른쪽 정렬<br>
+![크로스33](https://user-images.githubusercontent.com/84646738/204079743-f80176dc-d5bd-4b0b-b3fd-83dc41b92980.jpg)
