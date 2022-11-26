@@ -185,4 +185,40 @@ margin은 위젯과 위젯 사이 빈공간을 설정한다.
 * EdgeInsects.all : 전체 방향에 적용
 * EdgeInsects.only(top: 10, bottom: 10, left: 10, right: 10) : 세부 설정 가능
 
+## Column
+Container의 자식 옵션이 child라면
+Column은 children을 가진다. 복수개의 하위 자식을 할당할 수 있다.
+
+```dart
+body: Column(
+        children: [
+          Text("자식1"),
+          Text("자식2"),
+          Text("자식3"),
+        ],
+      ),
+```
+![컬럼1](https://user-images.githubusercontent.com/84646738/204078395-97fde3b1-e8a9-4f78-9d81-3c263bfdc61b.jpg)<br>
+Column은 레이아웃이기 때문에 Container의 색상이나 경계선, 넓이, 높이따위의 옵션을 줄 수 없다.<br>
+Column의 높이는 남아있는 공간을 모두 차지하고
+넓이는 아래 children중 가장 긴 것을 따라간다.(Row는 반대)
+
+```dart
+body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text("자식1"),
+          Text("자식2"),
+          Text("자식3"),
+        ],
+```
+mainAxisAlignment는 자식들을 위 아래 방향으로 배열시키는 옵션이다.
+* mainAxisAlignment: MainAxisAlignment.start => 기본값<br>
+![자식1](https://user-images.githubusercontent.com/84646738/204078793-b6afc87c-9dc5-4449-bb53-9e3d879c8417.jpg)<br>
+* mainAxisAlignment: MainAxisAlignment.center => 위 아래 방향으로 정중앙<br>
+![자식2](https://user-images.githubusercontent.com/84646738/204078831-214de9fd-b461-4499-bc32-13afc23a4011.jpg)<br>
+* mainAxisAlignment: MainAxisAlignment.end<br>
+![자식3](https://user-images.githubusercontent.com/84646738/204079171-d25387f4-78d2-4403-8b25-810dd101eaae.jpg)
+<br>
+crossAxisAlignment는 자식들을 수평 방향으로 배열시키는 옵션이다.
 
