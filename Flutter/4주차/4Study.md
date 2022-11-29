@@ -239,3 +239,50 @@ body: Column(
 
 * crossAxisAlignment: CrossAxisAlignment.end => 수평방향 오른쪽 정렬<br>
 ![크로스33](https://user-images.githubusercontent.com/84646738/204079743-f80176dc-d5bd-4b0b-b3fd-83dc41b92980.jpg)
+
+
+# Button
+!! 주의사항
+1. child와 onPressd는 required이기 때문에 반드시 써줘야함.
+2. 색상과 같은 design부분은 styleForm을 받아서 함.
+3. 버튼의 높이나 너비를 지정하기 위해서는 반드시 sizedbox를 활용해 child로 넣어야 함.
+4. 버튼은 사방으로 약간의 margin이 기본적으로 존재함.(2px 정도)
+
+플러터의 버튼은 크게 3종류가 있다.<br>
+Text BUTTON : Text만 나옴.
+Elevated BUTTON : 배경색으로 버튼임을 강조함.
+Outlined BUTTON : 가장자리가 존재함.
+
+```dart
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+class MyApp extends StatelessWidget{
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar:AppBar(
+          title: Text('hello world'),
+        ),
+        body:Center(
+          child: Column(
+            children:[
+              TextButton(onPressed: () {}, child: Text("Text Button"),
+              ),
+              ElevatedButton(onPressed: () {}, child: Text("Elevated Button"),
+              ),
+              OutlinedButton(onPressed: () {}, child: Text("Outlined Button"),
+              ),
+            ]
+          )
+        )
+      )
+    );
+  }
+}
+```
+![버튼1](https://user-images.githubusercontent.com/84646738/204561960-88f60017-04f3-44f1-a3a0-6fed3daaf602.jpg)
+
