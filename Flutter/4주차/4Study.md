@@ -286,3 +286,78 @@ class MyApp extends StatelessWidget{
 ```
 ![버튼1](https://user-images.githubusercontent.com/84646738/204561960-88f60017-04f3-44f1-a3a0-6fed3daaf602.jpg)
 
+
+# Textfield
+```dart
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+class MyApp extends StatelessWidget{
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar:AppBar(
+          title: Text('hello world'),
+        ),
+        body:Center(
+          child: TextField(
+            decoration: InputDecoration(
+              labelText: 'Input',
+            ),
+         )
+        )
+      )
+    );
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/84646738/204785449-3a285c7f-4dca-4839-93de-3c8161da4a12.png)
+
+사용자의 입력을 받는 Textfield
+```dart
+TextField(
+  decoration: InputDecoration(
+    labelText: 'Input',
+  ),
+)
+```
+InputDecoration을 사용하면 Textfield 위젯을 더 다양하게 사용할 수 있다.
+
+```dart
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+class MyApp extends StatelessWidget{
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar:AppBar(
+          title: Text('hello world'),
+        ),
+        body:Center(
+          child: TextField(
+            decoration: InputDecoration(
+              labelText: 'Email',
+              hintText: 'Enter your email',
+              labelStyle: TextStyle(color: Colors.redAccent),
+
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                borderSide: BorderSide(width: 1, color: Colors.redAccent),
+              )
+            ),
+         )
+        )
+      )
+    );
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/84646738/204787649-372acfd5-06e8-46fb-abb5-fd5ef0f649e5.png)
+
