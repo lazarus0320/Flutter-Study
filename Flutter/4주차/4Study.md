@@ -433,3 +433,60 @@ class MyApp extends StatelessWidget {
 }
 ```
 ![image](https://user-images.githubusercontent.com/84646738/204797002-5db6b600-3217-4162-b0b2-59f4c345770e.png)
+
+
+# IconButton
+버튼에 아이콘 박은거.
+버튼을 누르면 소리 볼륨이 10씩 올라가는 모양의 예시 코드.
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  static const String _title = 'IconButton class Test';
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: _title,
+      home: Scaffold(
+        appBar: AppBar(title: const Text(_title)),
+        body: const Center(
+          child: MyStatefulWidget(),
+        )
+      )
+    );
+  }
+}
+double _volume = 0.0;
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({super.key});
+
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        IconButton(
+          icon: const Icon(Icons.volume_up),
+          tooltip: 'Increase volume by 10',
+          onPressed: () {
+            setState(() {
+              _volume += 10;
+            });
+          },
+        ),
+        Text('Volume: $_volume'),
+        ]
+    );
+    
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/84646738/204804102-0a359646-e84b-45ae-83d5-382eb730fcca.png)
