@@ -490,3 +490,56 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 }
 ```
 ![image](https://user-images.githubusercontent.com/84646738/204804102-0a359646-e84b-45ae-83d5-382eb730fcca.png)
+
+# CircularProgressIndicator
+앱 진행 상황을 나타낼 때 가장 많이 사용되는 위젯. 
+원형과 선형 2가지를 주로 쓴다.
+
+1. Determinate
+특정한 값을 갖는 것인데, CircularProgressIndicator의 value 속성을 활용하는 것이다. 0.0~1.0사이의 값을 value에 설정한다.
+특정 값으로 고정시킬경우, 위젯 자체도 움직이지 않는다. 따라서 value가 계속 변화하기위해 Controller가 필요하다.
+
+
+
+2. Indeterminate
+value값을 특정하지 않아서, 진행률이 얼마나 되는지 표시하지 않는다. 진행중이라는 모션을 계속해서 보여준다.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Center(
+        child: SizedBox(
+          width: 300,
+          height: 300,
+          child: Stack(
+            fit: StackFit.expand,
+            children: const [
+              CircularProgressIndicator(
+                strokeWidth: 10,
+                backgroundColor: Colors.white,
+                color: Colors.green,
+              ),
+              Center(
+                child: Text(
+                  'My Progress Indicator',
+                  style: TextStyle(fontSize: 20),
+                )
+              )
+            ]
+          )
+        )
+      )
+    );
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/84646738/204811035-ce0738f2-9708-4fe3-ad43-6a334379310c.png)
+
+
