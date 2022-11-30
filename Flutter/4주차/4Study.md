@@ -362,8 +362,12 @@ class MyApp extends StatelessWidget{
 ![image](https://user-images.githubusercontent.com/84646738/204787649-372acfd5-06e8-46fb-abb5-fd5ef0f649e5.png)
 
 # image
-![image](https://user-images.githubusercontent.com/84646738/204792940-4d1e521b-2761-430f-9635-f3f4ea08b353.png)
-프로젝트에 image파일들을 보관할 경로를 새로 만들어준다.
+![image](https://user-images.githubusercontent.com/84646738/204792940-4d1e521b-2761-430f-9635-f3f4ea08b353.png)<br>
+프로젝트에 image파일들을 보관할 경로를 새로 만들어준다.<br>
+
+![image](https://user-images.githubusercontent.com/84646738/204793464-25cf489f-16ac-4102-b185-fd2944abdf0d.png)<br>
+pubspec.yaml에서 assets 부분에 해당 폴더의 경로를 잡아주고 Pub get을 누른다.
+
 
 ```dart
 
@@ -386,6 +390,5 @@ class MyApp extends StatelessWidget{
   }
 }
 ```
-![image](https://user-images.githubusercontent.com/84646738/204793140-f4976b68-1f8b-4090-9160-19fa2aa06264.png)
-
+![image](https://user-images.githubusercontent.com/84646738/204793140-f4976b68-1f8b-4090-9160-19fa2aa06264.png)<br>
 
