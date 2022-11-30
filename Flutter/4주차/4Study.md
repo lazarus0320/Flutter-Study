@@ -392,3 +392,44 @@ class MyApp extends StatelessWidget{
 ```
 ![image](https://user-images.githubusercontent.com/84646738/204793140-f4976b68-1f8b-4090-9160-19fa2aa06264.png)<br>
 
+# Icon
+기본적으로 사용할 수 있는 것으로 Materal UI와 Cupetino아이콘이 있다.
+## Material UI 아이콘
+1. Google Font 사이트에서 Icon 검색:  https://fonts.google.com/icons?selected=Material+Icons 
+2. 적용하고자 하는 아이콘 선택
+3. 오른쪽 화면에서 Icon ID를 복사 
+![image](https://user-images.githubusercontent.com/84646738/204795103-3dd00947-a445-4e66-a39d-e3b45ff58f7d.png)
+
+main.dart 상단에 import 'package:flutter/material.dart'; 를 통해 Icon class의 객체를 만들어 사용할 수 있다. Icon class는 Icon ID, color, size, accessibility mode에서의 text를 설정할 수 있다.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            body: Center(
+                child: (Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const <Widget>[
+          Icon(
+            Icons.favorite,
+            color: Colors.pink,
+            size: 24.0,
+            semanticLabel: 'Text',
+          ),
+          Icon(
+            Icons.audiotrack,
+            color: Colors.green,
+            size: 30.0,
+          )
+        ])))));
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/84646738/204797002-5db6b600-3217-4162-b0b2-59f4c345770e.png)
