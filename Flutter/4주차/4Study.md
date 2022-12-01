@@ -681,3 +681,87 @@ class MyApp extends StatelessWidget {
 ![image](https://user-images.githubusercontent.com/84646738/205092677-5ac7cdf3-5128-480c-8412-8aa08a12028f.png)
 다만 이럴 경우 노란색 컨테이너가 먼저 작성이 되어있기 때문에 그 컨테이너 범위 내에서만 파란색 컨테이너가 이동할 수 있다. 그 범위를 넘어서게 되면 위 그림처럼 잘리게 된다.
 
+
+# ButtomNavigationBar
+
+하단바(탭)을 제작하는 위젯
+```dart
+import 'package:flutter/material.dart';
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  static const String _title = 'Flutter Code Sample';
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: _title,
+      home: MarketPage(),
+    );
+  }
+}
+
+class MarketPage extends StatefulWidget {
+  const MarketPage({Key? key}) : super(key: key);
+
+  @override
+  State<MarketPage> createState() => _MarketPageState();
+}
+
+class _MarketPageState extends State<MarketPage> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold
+  );  // 텍스트 스타일 지정 부분
+
+  final List<Widget> _widgetOptions = <Widget>[
+    MySellPostPage(),
+    MyPostPage(),
+    MyPage(),
+  ];  // 3개의 버튼에 각각 연결된 페이지 지정
+  void _onItemTapped(int index) { // 탭을 클릭했을 때 지정한 페이지로 이동하는 State
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(Icons.text_snippet),
+              label: '나의 판매글',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: '홈',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.people),
+              label: '마이페이지',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.lightGreen,
+        onTap: _onItemTapped,
+      ),
+    );
+  }
+  @override
+  void initState() {  // 해당 클래스가 호출되었을
+  super.initState();
+  }
+  @override
+  void dispose() {
+  super.dispose();
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/84646738/205099693-9dec5582-2135-4a3c-9aef-4c148927b110.png)
+
