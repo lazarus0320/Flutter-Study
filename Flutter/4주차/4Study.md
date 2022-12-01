@@ -609,4 +609,75 @@ class Example extends StatelessWidget{
 }
 ```
 ![image](https://user-images.githubusercontent.com/84646738/205087401-87209de4-e2f6-47f5-bd26-41486864f100.png)
+그리고 color 속성이 없어서 색상을 입힐 수 없다고 한다.
+
+# Stack
+기존에는 컨테이너와 같은 위젯들을 배치하기 위해 Column, Rows 같은 배치용 위젯을 사용했다.
+Stack은 컨테이너나 이미지를 서로 겹쳐서 배치할 수 있도록 만들어준다.
+
+Column, Rows와 마찬가지로 배치하고자 하는 위젯들을 Stack으로 감싸주면 된다!
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('Stack 예제'),
+          ),
+          body: Stack(children: <Widget>[
+            Container(
+              color: Colors.yellow,
+              height: 100,
+              width: 80,
+            ),
+            Container(
+              color: Colors.blue,
+              height: 50,
+              width: 50,
+            )
+          ])),
+    );
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/84646738/205091737-784c9f9c-b201-427f-97cf-7fe8a3c82d0d.png)
+
+Positioned 위젯으로 감싸서 가로 세로 위치를 지정하여 child에 배치 하고자하는 위젯을 넣어줄 수도 있다. 이렇게 하면 컨테이너의 위치를 지정할 수 있다.
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('Stack 예제'),
+          ),
+          body: Stack(children: <Widget>[
+            Container(
+              color: Colors.yellow,
+              height: 100,
+              width: 80,
+            ),
+            Positioned(top:50, left:50,
+            child: Container(
+              color: Colors.blue,
+              height: 50,
+              width: 50,
+            )
+            )])),
+    );
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/84646738/205092677-5ac7cdf3-5128-480c-8412-8aa08a12028f.png)
+다만 이럴 경우 노란색 컨테이너가 먼저 작성이 되어있기 때문에 그 컨테이너 범위 내에서만 파란색 컨테이너가 이동할 수 있다. 그 범위를 넘어서게 되면 위 그림처럼 잘리게 된다.
 
