@@ -542,4 +542,71 @@ class MyApp extends StatelessWidget {
 ```
 ![image](https://user-images.githubusercontent.com/84646738/204811035-ce0738f2-9708-4fe3-ad43-6a334379310c.png)
 
+# Container와 SizedBox 위젯차이
+둘 다 width, height를 가진다는 공통점이 있다.
+
+Container의 경우 width, height를 넣지 않으면 최대 크기로 확장해준다.
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Container와 SizedBox 차이",
+      home: Example(),
+    );
+  }
+}
+class Example extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.blue,
+        child: Center(
+          child: Text("컨테이너"),
+        ),
+      ),
+    );
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/84646738/205084870-58a8d113-3e34-4882-b58f-aea0466b82a9.png)
+
+
+SizedBox의 경우 width와 height 둘 중 하나라도 설정하지 않으면 크기는 child의 크기에 맞게 설정된다.
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Container와 SizedBox 차이",
+      home: Example(),
+    );
+  }
+}
+class Example extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: SizedBox(
+          child: Container(
+            color: Colors.blue,
+            child: Text("Container"),
+          ),
+        )
+      )
+    );
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/84646738/205087401-87209de4-e2f6-47f5-bd26-41486864f100.png)
 
