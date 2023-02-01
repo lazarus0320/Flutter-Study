@@ -19,6 +19,35 @@ main() {
 ```
 > Kim
 
+'''dart
+class Person {
+  String? _name;
+  int? _age;
+
+  Person(this._name, this._age);
+
+  int? get age => _age;
+
+  set setAge(int age) => _age = age;
+
+  String? get name => _name;
+  set setName(String name) => _name = name;
+
+  void printInfo(){
+    print('name: $_name');
+    print('age: $_age');
+  }
+}
+'''
+
+main(){
+  Person person = Person('min', 13);
+  person.printInfo();
+  person.setName = 'moin';
+  person.setAge = 15;
+  person.printInfo();
+}
+
 
 # 인터페이스
 dart에서는 인터페이스를 class로 선언해 사용한다.
