@@ -19,7 +19,7 @@ main() {
 ```
 > Kim
 
-'''dart
+```dart
 class Person {
   String? _name;
   int? _age;
@@ -38,7 +38,7 @@ class Person {
     print('age: $_age');
   }
 }
-'''
+```
 
 main(){
   Person person = Person('min', 13);
