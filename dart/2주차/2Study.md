@@ -250,6 +250,27 @@ void main() {
 ```
 > XimYa Kim
 
+예시2 : 메서드 추가하기
+```dart
+class Rectangle {
+  int width;
+  int height;
+
+  Rectangle(this.width, this.height);
+
+  int area() => width * height;
+}
+
+extension DoubleArea on Rectangle {
+  int doubleArea() => area() * 2;
+}
+
+void main() {
+  Rectangle rect = new Rectangle(2, 3);
+  print(rect.doubleArea());  // Output: 12
+}
+```
+
 
 # Generic
 List, Set, Map과 같은 컬렉션에서는 <>을 사용하는데 이 부분에 타입 매개변수를 지정한다.
